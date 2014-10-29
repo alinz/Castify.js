@@ -2,7 +2,7 @@
 
 ## Introduction
 
-I know you don't have much time to read this doc, so do I (just kidding) :D, so I made it dead simple. If you answer `YES` to at least one of the following questions, seriously, you should continue reading this doc.
+I know you don't have much time to read this doc, so I made it dead simple. If you answer `YES` to at least one of the following questions, seriously, you should continue reading this doc.
 
 1. Do you have a ChromeCast device and you would like to talk to it with your browser?
 2. You read the google dev and provided examples are just too confusing... because you just want to do a simple thing only
