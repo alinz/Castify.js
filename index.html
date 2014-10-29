@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ChromeCast Tests</title>
+</head>
+<body>
+
+<script src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
+<script src="castify.js"></script>
+
+<script>
+    Castify.ready(function(loaded, errorInfo) {
+        if (loaded) {
+            var session = Castify.createSession({ policy: Castify.POLICY_RESTRICT });
+            session.status = function (status) {
+                Castify.log(status);
+                switch (status) {
+                    case Castify.SESSION_STARTED:
+                        session.mute(true);
+                        var media = Castify.createMedia({
+                            url: "http://goo.gl/oCSFGZ",
+                            type: "video/mp4",
+                            cover: {
+                                title: "Big Buck Bunny",
+                                url: "http://goo.gl/E7f5KI"
+                            }
+                        });
+                        session.load(media);
+                        break;
+
+                    case Castify.SESSION_RECOVERED:
+                        setTimeout(function () {
+                            session.pause();
+                        }, 5000);
+                        break;
+
+                    case Castify.MEDIA_PAUSED:
+                        setTimeout(function () {
+                            session.play();
+                        }, 5000);
+                        break;
+
+                    case Castify.MEDIA_SEEK_UPDATED:
+                        console.log(session.duration.currentTime + "/" + session.duration.totalTime);
+                        break;
+                }
+
+                if (status == Castify.SESSION_ERROR || status == Castify.MEDIA_ERROR) {
+                    console.log(session.lastError);
+                }
+            };
+        } else {
+            console.log(errorInfo);
+        }
+    });
+</script>
+
+</body>
+</html>
