@@ -187,5 +187,5 @@ The following are all public available methods for `session` object.
 |stop()|It stops the playing or paused media|
 |seek(value)|it sets a new value for forwarding or backwarding media content|
 |mute(enable)|It mutes a volume by passing a boolean variable|
-|end|It terminates session which cause ChromeCast to terminate the app|
+|end()|It terminates session which cause ChromeCast to terminate the app|
 |status(status)|It needs to be set and will be called by `Castify.Session` object directly |
