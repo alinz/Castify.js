@@ -96,7 +96,7 @@ So in order to create a session, we need to create one. `Castify.createSession` 
 After that, we register a function to `session.status`. This function is called by `Castify` to notify your application about any changes in ChromeCast apis. Here's the list of status that you might get
 
 | Name | Description |
-|:-|:-|
+|:-----|:------------|
 |*Castify.SESSION_INITIALIZED*| Once session is created successfully and waits for user interaction|
 |*Castify.SESSION_STARTED*    |Once a ChromeCast device is selected from plugin list|
 |*Castify.SESSION_RECOVERED*  |Once the page is refreshed and an active session is found|
@@ -111,6 +111,7 @@ After that, we register a function to `session.status`. This function is called 
 |*Castify.MEDIA_SEEK_UPDATED* |Calls every second once the stream url is being played|
 |*Castify.MEDIA_STOPPED*      |Once the player is successfully stopped|
 |*Castify.MEDIA_ERROR*        |Once the player is encounter an error. `lastError` can be used to retrieve the error|
+
 
 So let's load a free mp4 video and play it on ChromeCast. Before doing that, we need to create media object. Media objects are created by `Castify.createMedia(options)` function. Once you created a media object you can load it by using `session.load(media)` method.
 
@@ -179,7 +180,7 @@ Castify has 3 class methods
 The following are all public available methods for `session` object.
 
 | Method name | Description |
-|:-|:-|
+|:--|:--|
 |load(media)|Loads the media object. media object can be created by `Castify.createMedia`|
 |play()|It plays a paused or loaded media|
 |paused()|It pauses a playing media|
