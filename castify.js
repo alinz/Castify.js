@@ -133,6 +133,7 @@ Castify.Session = function (appId, policy) {
 };
 
 Castify.Session.prototype = {
+    constructor: Castify.Session,
     _setStatus: function (status) {
         var that = this;
         if ((that.lastStatus == Castify.SESSION_RECOVERED && status == Castify.SESSION_ERROR) ||
